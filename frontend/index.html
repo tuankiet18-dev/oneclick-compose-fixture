@@ -71,15 +71,14 @@
         database run as separate Compose services on the execution node.
       </p>
       <p>Frontend host: <code id="host"></code></p>
-      <p>Derived API base: <code id="api-base"></code></p>
+      <p>Internal API path: <code id="api-base"></code></p>
       <button id="check">Check API and database</button>
       <pre id="result">Click the button to call /health and /db-check.</pre>
     </main>
 
     <script>
       const host = window.location.host;
-      const apiHost = host.replace(/^app-/, "api-");
-      const apiBase = `${window.location.protocol}//${apiHost}`;
+      const apiBase = "/api";
 
       document.getElementById("host").textContent = host;
       document.getElementById("api-base").textContent = apiBase;
